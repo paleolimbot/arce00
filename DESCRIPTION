@@ -20,8 +20,10 @@ RoxygenNote: 7.1.1
 Suggests: 
     testthat,
     sf,
-    covr
+    covr,
+    rgdal
 URL: https://github.com/paleolimbot/arce00
 BugReports: https://github.com/paleolimbot/arce00/issues
 Imports: 
-    fs
+    fs,
+    tibble

@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/paleolimbot/arce00/branch/master/graph/badge.svg)](https://codecov.io/gh/paleolimbot/arce00?branch=master)
 <!-- badges: end -->
 
-The goal of arce00 is to read e00 files or convert them to a form that sf or sp can read. While these package *can* readn e00 files, the read operation is too slow to be practical on some platforms. This package ports the [AVCE library](http://avce00.maptools.org/avce00/avce00.html) to R for efficient conversion to a binary coverage (for which sf/sp read operations are efficient).
+The goal of arce00 is to read e00 files or convert them to a form that sf or sp can read. While these package *can* read e00 files, the read operation is too slow to be practical on some platforms. This package ports the [AVCE library](http://avce00.maptools.org/avce00/avce00.html) to R for efficient conversion to a binary coverage (for which sf/sp read operations are efficient).
 
 ## Installation
 
@@ -40,8 +40,13 @@ This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
 library(arce00)
-
 e00 <- system.file("e00/cis_20170911.e00", package = "arce00")
+e00_read_sf(e00)
+```
+
+You can also use `e00_layers()` to list layer information and `e00_readOGR()` to read to sp. These functions generate temporary binary coverages under the hood and delete them afterward: to do this conversion yourself, use `e00_convert()`:
+
+```{r}
 cov <- e00_temp_coverage()
 coverage <- e00_convert(e00, cov)
 sf::read_sf(coverage, layer = "LAB")

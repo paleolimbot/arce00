@@ -1,0 +1,4 @@
+src/avc_*
+src/cpl_*
+src/dbfopen.c
+src/dbfopen.h

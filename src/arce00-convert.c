@@ -52,5 +52,9 @@ SEXP arce00_c_convert(SEXP filenameIn, SEXP pathOut, SEXP coverageType) {
 
   ConvertCover(fpIn, pszCoverPath, eCoverType);
 
+  if (CPLGetLastErrorNo() != 0) {
+    Rf_error(CPLGetLastErrorMsg());
+  }
+
   return R_NilValue;
 }

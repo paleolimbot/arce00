@@ -26,5 +26,15 @@ e00_convert <- function(e00, coverage = e00_temp_coverage(),
     match(coverage_type, c("V7", "PC"))
   )
 
+  if (identical(list.files(coverage), character(0))) {
+    stop(
+      sprintf(
+        "e00_convert() did not generate output.\nIs '%s' a .e00 file?",
+        e00
+      ),
+      call. = FALSE
+    )
+  }
+
   coverage
 }

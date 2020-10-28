@@ -1,0 +1,45 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# arce00
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of arce00 is to read e00 files or convert them to a form that sf or sp can read. While these package *can* readn e00 files, the read operation is too slow to be practical on some platforms. This package ports the [AVCE library](http://avce00.maptools.org/avce00/avce00.html) to R for efficient conversion to a binary coverage (for which sf/sp read operations are efficient).
+
+## Installation
+
+You can install the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("paleolimbot/arce00")
+```
+
+The arce00 package contains compiled code, so you will need to have build tools (e.g., Rtools) installed.
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(arce00)
+
+e00 <- system.file("e00/cis_20170911.e00", package = "arce00")
+cov <- e00_temp_coverage()
+coverage <- e00_convert(e00, cov)
+sf::read_sf(coverage, layer = "LAB")
+```

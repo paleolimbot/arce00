@@ -1,12 +1,14 @@
 Package: arce00
 Title: Read E00 Files
 Version: 0.0.0.9000
-Authors@R: 
+Authors@R: c(
     person(given = "Dewey",
            family = "Dunnington",
            role = c("aut", "cre"),
            email = "dewey.dunnington@dfo-mpo.gc.ca",
-           comment = c(ORCID = "0000-0002-9415-4582"))
+           comment = c(ORCID = "0000-0002-9415-4582")),
+    person("Daniel", "Morissette", role = "cph", comment = "Author of AVCE")
+  )
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
 Encoding: UTF-8

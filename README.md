@@ -5,6 +5,12 @@
 
 <!-- badges: start -->
 
+[![R build
+status](https://github.com/paleolimbot/arce00/workflows/R-CMD-check/badge.svg)](https://github.com/paleolimbot/arce00/actions)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Codecov test
+coverage](https://codecov.io/gh/paleolimbot/arce00/branch/master/graph/badge.svg)](https://codecov.io/gh/paleolimbot/arce00?branch=master)
 <!-- badges: end -->
 
 The goal of arce00 is to read e00 files or convert them to a form that
@@ -44,7 +50,7 @@ sf::read_sf(coverage, layer = "LAB")
 #> bbox:           xmin: 349288.1 ymin: 1577259 xmax: 2581513 ymax: 3557555
 #> projected CRS:  unnamed
 #> # A tibble: 87 x 69
-#>    ValueId PolyId    AREA PERIMETER QSCJ2OGSZYZQG. QSCJ2OGSZYZQG.ID A_LEGEND
+#>    ValueId PolyId    AREA PERIMETER BR2MZG16O5GX6. BR2MZG16O5GX6.ID A_LEGEND
 #>      <int>  <int>   <dbl>     <dbl>          <int>            <int> <chr>   
 #>  1       2      2 8.85e11 31235633.              2                2 Bergy w~
 #>  2       3      3 1.48e 8    94500.              3                3 Land    

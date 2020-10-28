@@ -17,7 +17,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
     testthat,
-    sf
+    sf,
+    covr
 URL: https://github.com/paleolimbot/arce00
 BugReports: https://github.com/paleolimbot/arce00/issues
 Imports: 

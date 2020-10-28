@@ -16,6 +16,9 @@ knitr::opts_chunk$set(
 # arce00
 
 <!-- badges: start -->
+[![R build status](https://github.com/paleolimbot/arce00/workflows/R-CMD-check/badge.svg)](https://github.com/paleolimbot/arce00/actions)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Codecov test coverage](https://codecov.io/gh/paleolimbot/arce00/branch/master/graph/badge.svg)](https://codecov.io/gh/paleolimbot/arce00?branch=master)
 <!-- badges: end -->
 
 The goal of arce00 is to read e00 files or convert them to a form that sf or sp can read. While these package *can* readn e00 files, the read operation is too slow to be practical on some platforms. This package ports the [AVCE library](http://avce00.maptools.org/avce00/avce00.html) to R for efficient conversion to a binary coverage (for which sf/sp read operations are efficient).

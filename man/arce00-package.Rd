@@ -6,7 +6,9 @@
 \alias{arce00-package}
 \title{arce00: Read E00 Files}
 \description{
-What the package does (one paragraph).
+Converts Arc e00 coverage files to a form that can be read by
+  'sf' or 'sp' using the 'AVCE' library 
+  <http://avce00.maptools.org/avce00/avce00.html>.
 }
 \seealso{
 Useful links:

@@ -4,7 +4,7 @@
 \alias{e00_convert}
 \title{Convert an e00 file to a binary coverage}
 \usage{
-e00_convert(e00, coverage, coverage_type = c("V7", "PC"))
+e00_convert(e00, coverage = e00_temp_coverage(), coverage_type = c("V7", "PC"))
 }
 \arguments{
 \item{e00}{Path to a .e00 file.}
@@ -22,6 +22,8 @@ Convert an e00 file to a binary coverage
 }
 \examples{
 e00 <- system.file("e00/cis_20170911.e00", package = "arce00")
-coverage <- e00_convert(e00, "cov")
+coverage <- e00_convert(e00)
+sf::st_read(coverage, layer = "LAB")
+unlink(coverage, recursive = TRUE)
 
 }

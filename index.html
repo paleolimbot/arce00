@@ -79,8 +79,8 @@
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install the development version from <a href="https://github.com/">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"paleolimbot/arce00"</span><span class="op">)</span></pre></div>
+<span class="co"># install.packages("remotes")</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"paleolimbot/arce00"</span><span class="op">)</span></pre></div>
 <p>The arce00 package contains compiled code, so you will need to have build tools (e.g., Rtools) installed.</p>
 </div>
 <div id="example" class="section level2">
@@ -97,30 +97,30 @@
 <span class="co">#&gt; bbox:           xmin: 39656.16 ymin: 1165135 xmax: 2687056 ymax: 3743606</span>
 <span class="co">#&gt; projected CRS:  unnamed</span>
 <span class="co">#&gt; # A tibble: 87 x 68</span>
-<span class="co">#&gt;       AREA PERIMETER VNN0FWBTKBQLB. VNN0FWBTKBQLB.ID A_LEGEND REGION DATE_CARTE</span>
-<span class="co">#&gt;      &lt;dbl&gt;     &lt;dbl&gt;          &lt;int&gt;            &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;     </span>
-<span class="co">#&gt;  1 8.85e11 31235633.              2                2 Bergy w~ HB     20170911  </span>
-<span class="co">#&gt;  2 1.48e 8    94500.              3                3 Land     HB     20170911  </span>
-<span class="co">#&gt;  3 2.24e11 14482767.              4                4 Land     HB     20170911  </span>
-<span class="co">#&gt;  4 1.27e 8    53164.              5                5 Land     HB     20170911  </span>
-<span class="co">#&gt;  5 1.44e 8    87332.              6                6 Land     HB     20170911  </span>
-<span class="co">#&gt;  6 1.10e 8    71738.              7                7 Land     HB     20170911  </span>
-<span class="co">#&gt;  7 1.32e 8   110787.              8                8 Land     HB     20170911  </span>
-<span class="co">#&gt;  8 8.32e 7    78102.              9                9 Land     HB     20170911  </span>
-<span class="co">#&gt;  9 8.66e10  2431778.             10               10 Ice free HB     20170911  </span>
-<span class="co">#&gt; 10 4.18e 7    26337.             11               11 Land     HB     20170911  </span>
-<span class="co">#&gt; # ... with 77 more rows, and 61 more variables: SOURCE &lt;chr&gt;, MOD &lt;chr&gt;,</span>
-<span class="co">#&gt; #   EGG_ID &lt;int&gt;, PNT_TYPE &lt;int&gt;, EGG_NAME &lt;chr&gt;, EGG_SCALE &lt;int&gt;,</span>
-<span class="co">#&gt; #   EGG_ATTR &lt;chr&gt;, USER_ATTR &lt;chr&gt;, ROTATION &lt;int&gt;, E_CT &lt;chr&gt;, E_CA &lt;chr&gt;,</span>
-<span class="co">#&gt; #   E_CB &lt;chr&gt;, E_CC &lt;chr&gt;, E_CD &lt;chr&gt;, E_SO &lt;chr&gt;, E_SA &lt;chr&gt;, E_SB &lt;chr&gt;,</span>
-<span class="co">#&gt; #   E_SC &lt;chr&gt;, E_SD &lt;chr&gt;, E_SE &lt;chr&gt;, E_FA &lt;chr&gt;, E_FB &lt;chr&gt;, E_FC &lt;chr&gt;,</span>
-<span class="co">#&gt; #   E_FD &lt;chr&gt;, E_FE &lt;chr&gt;, E_CS &lt;chr&gt;, R_CT &lt;chr&gt;, R_CMY &lt;chr&gt;, R_CSY &lt;chr&gt;,</span>
-<span class="co">#&gt; #   R_CFY &lt;chr&gt;, R_CGW &lt;chr&gt;, R_CG &lt;chr&gt;, R_CN &lt;chr&gt;, R_PMY &lt;chr&gt;, R_PSY &lt;chr&gt;,</span>
-<span class="co">#&gt; #   R_PFY &lt;chr&gt;, R_PGW &lt;chr&gt;, R_PG &lt;chr&gt;, R_PN &lt;chr&gt;, R_CS &lt;chr&gt;, R_SMY &lt;chr&gt;,</span>
-<span class="co">#&gt; #   R_SSY &lt;chr&gt;, R_SFY &lt;chr&gt;, R_SGW &lt;chr&gt;, R_SG &lt;chr&gt;, R_SN &lt;chr&gt;, N_CT &lt;chr&gt;,</span>
-<span class="co">#&gt; #   N_COI &lt;chr&gt;, N_CMY &lt;chr&gt;, N_CSY &lt;chr&gt;, N_CFY &lt;chr&gt;, N_CFY_TK &lt;chr&gt;,</span>
-<span class="co">#&gt; #   N_CFY_M &lt;chr&gt;, N_CFY_TN &lt;chr&gt;, N_CYI &lt;chr&gt;, N_CGW &lt;chr&gt;, N_CG &lt;chr&gt;,</span>
-<span class="co">#&gt; #   N_CN &lt;chr&gt;, N_CB &lt;chr&gt;, ArcIds &lt;list&gt;, geometry &lt;POLYGON [m]&gt;</span></pre></div>
+<span class="co">#&gt;       AREA PERIMETER ARCE00_COV. ARCE00_COV.ID A_LEGEND REGION DATE_CARTE SOURCE</span>
+<span class="co">#&gt;      &lt;dbl&gt;     &lt;dbl&gt;       &lt;int&gt;         &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt; </span>
+<span class="co">#&gt;  1 8.85e11 31235633.           2             2 Bergy w~ HB     20170911   ""    </span>
+<span class="co">#&gt;  2 1.48e 8    94500.           3             3 Land     HB     20170911   ""    </span>
+<span class="co">#&gt;  3 2.24e11 14482767.           4             4 Land     HB     20170911   ""    </span>
+<span class="co">#&gt;  4 1.27e 8    53164.           5             5 Land     HB     20170911   ""    </span>
+<span class="co">#&gt;  5 1.44e 8    87332.           6             6 Land     HB     20170911   ""    </span>
+<span class="co">#&gt;  6 1.10e 8    71738.           7             7 Land     HB     20170911   ""    </span>
+<span class="co">#&gt;  7 1.32e 8   110787.           8             8 Land     HB     20170911   ""    </span>
+<span class="co">#&gt;  8 8.32e 7    78102.           9             9 Land     HB     20170911   ""    </span>
+<span class="co">#&gt;  9 8.66e10  2431778.          10            10 Ice free HB     20170911   ""    </span>
+<span class="co">#&gt; 10 4.18e 7    26337.          11            11 Land     HB     20170911   ""    </span>
+<span class="co">#&gt; # ... with 77 more rows, and 60 more variables: MOD &lt;chr&gt;, EGG_ID &lt;int&gt;,</span>
+<span class="co">#&gt; #   PNT_TYPE &lt;int&gt;, EGG_NAME &lt;chr&gt;, EGG_SCALE &lt;int&gt;, EGG_ATTR &lt;chr&gt;,</span>
+<span class="co">#&gt; #   USER_ATTR &lt;chr&gt;, ROTATION &lt;int&gt;, E_CT &lt;chr&gt;, E_CA &lt;chr&gt;, E_CB &lt;chr&gt;,</span>
+<span class="co">#&gt; #   E_CC &lt;chr&gt;, E_CD &lt;chr&gt;, E_SO &lt;chr&gt;, E_SA &lt;chr&gt;, E_SB &lt;chr&gt;, E_SC &lt;chr&gt;,</span>
+<span class="co">#&gt; #   E_SD &lt;chr&gt;, E_SE &lt;chr&gt;, E_FA &lt;chr&gt;, E_FB &lt;chr&gt;, E_FC &lt;chr&gt;, E_FD &lt;chr&gt;,</span>
+<span class="co">#&gt; #   E_FE &lt;chr&gt;, E_CS &lt;chr&gt;, R_CT &lt;chr&gt;, R_CMY &lt;chr&gt;, R_CSY &lt;chr&gt;, R_CFY &lt;chr&gt;,</span>
+<span class="co">#&gt; #   R_CGW &lt;chr&gt;, R_CG &lt;chr&gt;, R_CN &lt;chr&gt;, R_PMY &lt;chr&gt;, R_PSY &lt;chr&gt;, R_PFY &lt;chr&gt;,</span>
+<span class="co">#&gt; #   R_PGW &lt;chr&gt;, R_PG &lt;chr&gt;, R_PN &lt;chr&gt;, R_CS &lt;chr&gt;, R_SMY &lt;chr&gt;, R_SSY &lt;chr&gt;,</span>
+<span class="co">#&gt; #   R_SFY &lt;chr&gt;, R_SGW &lt;chr&gt;, R_SG &lt;chr&gt;, R_SN &lt;chr&gt;, N_CT &lt;chr&gt;, N_COI &lt;chr&gt;,</span>
+<span class="co">#&gt; #   N_CMY &lt;chr&gt;, N_CSY &lt;chr&gt;, N_CFY &lt;chr&gt;, N_CFY_TK &lt;chr&gt;, N_CFY_M &lt;chr&gt;,</span>
+<span class="co">#&gt; #   N_CFY_TN &lt;chr&gt;, N_CYI &lt;chr&gt;, N_CGW &lt;chr&gt;, N_CG &lt;chr&gt;, N_CN &lt;chr&gt;,</span>
+<span class="co">#&gt; #   N_CB &lt;chr&gt;, ArcIds &lt;list&gt;, geometry &lt;POLYGON [m]&gt;</span></pre></div>
 <p>You can also use <code><a href="reference/e00_read_sf.html">e00_layers()</a></code> to list layer information and <code><a href="reference/e00_read_sf.html">e00_readOGR()</a></code> to read to sp. These functions generate temporary binary coverages under the hood and delete them afterward: to do this conversion yourself, use <code><a href="reference/e00_convert.html">e00_convert()</a></code>:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit">
 <span class="va">cov</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/e00_temp_coverage.html">e00_temp_coverage</a></span><span class="op">(</span><span class="op">)</span>
@@ -132,30 +132,30 @@
 <span class="co">#&gt; bbox:           xmin: 349288.1 ymin: 1577259 xmax: 2581513 ymax: 3557555</span>
 <span class="co">#&gt; projected CRS:  unnamed</span>
 <span class="co">#&gt; # A tibble: 87 x 69</span>
-<span class="co">#&gt;    ValueId PolyId    AREA PERIMETER X1HAE1NGOLSPGB. X1HAE1NGOLSPGB.~ A_LEGEND</span>
-<span class="co">#&gt;      &lt;int&gt;  &lt;int&gt;   &lt;dbl&gt;     &lt;dbl&gt;           &lt;int&gt;            &lt;int&gt; &lt;chr&gt;   </span>
-<span class="co">#&gt;  1       2      2 8.85e11 31235633.               2                2 Bergy w~</span>
-<span class="co">#&gt;  2       3      3 1.48e 8    94500.               3                3 Land    </span>
-<span class="co">#&gt;  3       4      4 2.24e11 14482767.               4                4 Land    </span>
-<span class="co">#&gt;  4       5      5 1.27e 8    53164.               5                5 Land    </span>
-<span class="co">#&gt;  5       6      6 1.44e 8    87332.               6                6 Land    </span>
-<span class="co">#&gt;  6       7      7 1.10e 8    71738.               7                7 Land    </span>
-<span class="co">#&gt;  7       8      8 1.32e 8   110787.               8                8 Land    </span>
-<span class="co">#&gt;  8       9      9 8.32e 7    78102.               9                9 Land    </span>
-<span class="co">#&gt;  9      10     10 8.66e10  2431778.              10               10 Ice free</span>
-<span class="co">#&gt; 10      11     11 4.18e 7    26337.              11               11 Land    </span>
-<span class="co">#&gt; # ... with 77 more rows, and 62 more variables: REGION &lt;chr&gt;, DATE_CARTE &lt;chr&gt;,</span>
-<span class="co">#&gt; #   SOURCE &lt;chr&gt;, MOD &lt;chr&gt;, EGG_ID &lt;int&gt;, PNT_TYPE &lt;int&gt;, EGG_NAME &lt;chr&gt;,</span>
-<span class="co">#&gt; #   EGG_SCALE &lt;int&gt;, EGG_ATTR &lt;chr&gt;, USER_ATTR &lt;chr&gt;, ROTATION &lt;int&gt;,</span>
-<span class="co">#&gt; #   E_CT &lt;chr&gt;, E_CA &lt;chr&gt;, E_CB &lt;chr&gt;, E_CC &lt;chr&gt;, E_CD &lt;chr&gt;, E_SO &lt;chr&gt;,</span>
-<span class="co">#&gt; #   E_SA &lt;chr&gt;, E_SB &lt;chr&gt;, E_SC &lt;chr&gt;, E_SD &lt;chr&gt;, E_SE &lt;chr&gt;, E_FA &lt;chr&gt;,</span>
-<span class="co">#&gt; #   E_FB &lt;chr&gt;, E_FC &lt;chr&gt;, E_FD &lt;chr&gt;, E_FE &lt;chr&gt;, E_CS &lt;chr&gt;, R_CT &lt;chr&gt;,</span>
-<span class="co">#&gt; #   R_CMY &lt;chr&gt;, R_CSY &lt;chr&gt;, R_CFY &lt;chr&gt;, R_CGW &lt;chr&gt;, R_CG &lt;chr&gt;, R_CN &lt;chr&gt;,</span>
-<span class="co">#&gt; #   R_PMY &lt;chr&gt;, R_PSY &lt;chr&gt;, R_PFY &lt;chr&gt;, R_PGW &lt;chr&gt;, R_PG &lt;chr&gt;, R_PN &lt;chr&gt;,</span>
-<span class="co">#&gt; #   R_CS &lt;chr&gt;, R_SMY &lt;chr&gt;, R_SSY &lt;chr&gt;, R_SFY &lt;chr&gt;, R_SGW &lt;chr&gt;, R_SG &lt;chr&gt;,</span>
-<span class="co">#&gt; #   R_SN &lt;chr&gt;, N_CT &lt;chr&gt;, N_COI &lt;chr&gt;, N_CMY &lt;chr&gt;, N_CSY &lt;chr&gt;, N_CFY &lt;chr&gt;,</span>
-<span class="co">#&gt; #   N_CFY_TK &lt;chr&gt;, N_CFY_M &lt;chr&gt;, N_CFY_TN &lt;chr&gt;, N_CYI &lt;chr&gt;, N_CGW &lt;chr&gt;,</span>
-<span class="co">#&gt; #   N_CG &lt;chr&gt;, N_CN &lt;chr&gt;, N_CB &lt;chr&gt;, geometry &lt;POINT [m]&gt;</span></pre></div>
+<span class="co">#&gt;    ValueId PolyId    AREA PERIMETER ARCE00_COV. ARCE00_COV.ID A_LEGEND REGION</span>
+<span class="co">#&gt;      &lt;int&gt;  &lt;int&gt;   &lt;dbl&gt;     &lt;dbl&gt;       &lt;int&gt;         &lt;int&gt; &lt;chr&gt;    &lt;chr&gt; </span>
+<span class="co">#&gt;  1       2      2 8.85e11 31235633.           2             2 Bergy w~ HB    </span>
+<span class="co">#&gt;  2       3      3 1.48e 8    94500.           3             3 Land     HB    </span>
+<span class="co">#&gt;  3       4      4 2.24e11 14482767.           4             4 Land     HB    </span>
+<span class="co">#&gt;  4       5      5 1.27e 8    53164.           5             5 Land     HB    </span>
+<span class="co">#&gt;  5       6      6 1.44e 8    87332.           6             6 Land     HB    </span>
+<span class="co">#&gt;  6       7      7 1.10e 8    71738.           7             7 Land     HB    </span>
+<span class="co">#&gt;  7       8      8 1.32e 8   110787.           8             8 Land     HB    </span>
+<span class="co">#&gt;  8       9      9 8.32e 7    78102.           9             9 Land     HB    </span>
+<span class="co">#&gt;  9      10     10 8.66e10  2431778.          10            10 Ice free HB    </span>
+<span class="co">#&gt; 10      11     11 4.18e 7    26337.          11            11 Land     HB    </span>
+<span class="co">#&gt; # ... with 77 more rows, and 61 more variables: DATE_CARTE &lt;chr&gt;, SOURCE &lt;chr&gt;,</span>
+<span class="co">#&gt; #   MOD &lt;chr&gt;, EGG_ID &lt;int&gt;, PNT_TYPE &lt;int&gt;, EGG_NAME &lt;chr&gt;, EGG_SCALE &lt;int&gt;,</span>
+<span class="co">#&gt; #   EGG_ATTR &lt;chr&gt;, USER_ATTR &lt;chr&gt;, ROTATION &lt;int&gt;, E_CT &lt;chr&gt;, E_CA &lt;chr&gt;,</span>
+<span class="co">#&gt; #   E_CB &lt;chr&gt;, E_CC &lt;chr&gt;, E_CD &lt;chr&gt;, E_SO &lt;chr&gt;, E_SA &lt;chr&gt;, E_SB &lt;chr&gt;,</span>
+<span class="co">#&gt; #   E_SC &lt;chr&gt;, E_SD &lt;chr&gt;, E_SE &lt;chr&gt;, E_FA &lt;chr&gt;, E_FB &lt;chr&gt;, E_FC &lt;chr&gt;,</span>
+<span class="co">#&gt; #   E_FD &lt;chr&gt;, E_FE &lt;chr&gt;, E_CS &lt;chr&gt;, R_CT &lt;chr&gt;, R_CMY &lt;chr&gt;, R_CSY &lt;chr&gt;,</span>
+<span class="co">#&gt; #   R_CFY &lt;chr&gt;, R_CGW &lt;chr&gt;, R_CG &lt;chr&gt;, R_CN &lt;chr&gt;, R_PMY &lt;chr&gt;, R_PSY &lt;chr&gt;,</span>
+<span class="co">#&gt; #   R_PFY &lt;chr&gt;, R_PGW &lt;chr&gt;, R_PG &lt;chr&gt;, R_PN &lt;chr&gt;, R_CS &lt;chr&gt;, R_SMY &lt;chr&gt;,</span>
+<span class="co">#&gt; #   R_SSY &lt;chr&gt;, R_SFY &lt;chr&gt;, R_SGW &lt;chr&gt;, R_SG &lt;chr&gt;, R_SN &lt;chr&gt;, N_CT &lt;chr&gt;,</span>
+<span class="co">#&gt; #   N_COI &lt;chr&gt;, N_CMY &lt;chr&gt;, N_CSY &lt;chr&gt;, N_CFY &lt;chr&gt;, N_CFY_TK &lt;chr&gt;,</span>
+<span class="co">#&gt; #   N_CFY_M &lt;chr&gt;, N_CFY_TN &lt;chr&gt;, N_CYI &lt;chr&gt;, N_CGW &lt;chr&gt;, N_CG &lt;chr&gt;,</span>
+<span class="co">#&gt; #   N_CN &lt;chr&gt;, N_CB &lt;chr&gt;, geometry &lt;POINT [m]&gt;</span></pre></div>
 </div>
 </div>
   </div>

@@ -28,8 +28,8 @@ The goal of arce00 is to read e00 files or convert them to a form that sf or sp 
 You can install the development version from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("paleolimbot/arce00")
+# install.packages("remotes")
+remotes::install_github("paleolimbot/arce00")
 ```
 
 The arce00 package contains compiled code, so you will need to have build tools (e.g., Rtools) installed.

@@ -2,9 +2,15 @@
 % Please edit documentation in R/e00-temp.R
 \name{e00_temp_coverage}
 \alias{e00_temp_coverage}
+\alias{e00_remove_temp_coverage}
 \title{Create a temporary coverage directory}
 \usage{
 e00_temp_coverage()
+
+e00_remove_temp_coverage(path)
+}
+\arguments{
+\item{path}{A path to a previously created temporary coverage.}
 }
 \value{
 The path to a suitable temporary coverage.

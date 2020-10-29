@@ -24,7 +24,7 @@
 #'
 e00_read_sf <- function(e00, layer = "PAL", ...) {
   cov <- e00_temp_coverage()
-  on.exit(unlink(cov, recursive = TRUE))
+  on.exit(e00_remove_temp_coverage(cov))
   e00_convert(e00, cov, coverage_type = "V7")
   sf::read_sf(cov, layer = layer, ...)
 }
@@ -33,7 +33,7 @@ e00_read_sf <- function(e00, layer = "PAL", ...) {
 #' @export
 e00_layers <- function(e00, ...) {
   cov <- e00_temp_coverage()
-  on.exit(unlink(cov, recursive = TRUE))
+  on.exit(e00_remove_temp_coverage(cov))
   e00_convert(e00, cov, coverage_type = "V7")
   sf::st_layers(cov, ...)
 }
@@ -42,7 +42,7 @@ e00_layers <- function(e00, ...) {
 #' @export
 e00_readOGR <- function(e00, layer = "PAL", ...) {
   cov <- e00_temp_coverage()
-  on.exit(unlink(cov, recursive = TRUE))
+  on.exit(e00_remove_temp_coverage(cov))
   e00_convert(e00, cov, coverage_type = "V7")
   rgdal::readOGR(cov, layer = layer, ...)
 }

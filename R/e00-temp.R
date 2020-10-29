@@ -6,6 +6,8 @@
 #' This function generates a suitable temporary directory fitting
 #' these constraints.
 #'
+#' @param path A path to a previously created temporary coverage.
+#'
 #' @return The path to a suitable temporary coverage.
 #' @export
 #'
@@ -13,17 +15,30 @@
 #' e00_temp_coverage()
 #'
 e00_temp_coverage <- function() {
-  file.path(e00_temp_dir, random_chars(13))
+  # We need a container because creating the coverage also
+  # adds an 'info' directory alongside the coverage directory.
+  container <- tempfile(tmpdir = e00_temp_dir)
+  dir.create(container)
+  # This coverage name is also a column name when reading with
+  # GDAL, so keep the same so that multiple reads can be
+  # rbinded.
+  file.path(container, "arce00_cov")
 }
 
-random_chars <- function(n) {
-  paste(sample(filename_friendly_chars, n, replace = TRUE), collapse = "")
-}
+#' @rdname e00_temp_coverage
+#' @export
+e00_remove_temp_coverage <- function(path) {
+  path_is_temp_cov <- identical(
+    fs::path_abs(dirname(dirname(path))),
+    fs::path_abs(e00_temp_dir)
+  )
 
-filename_friendly_chars <- c(
-  "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
-  "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y",
-  "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
-  "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y",
-  "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
-)
+  if (!path_is_temp_cov) {
+    stop(
+      sprintf("`path` must be a path created by e00_temp_coverage()"),
+      call. = FALSE
+    )
+  }
+
+  unlink(dirname(path), recursive = TRUE)
+}
